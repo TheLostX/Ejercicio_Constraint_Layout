@@ -2,6 +2,7 @@ package com.lost.ejerciciologin;
 
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
 
 import android.os.Bundle;
 
@@ -47,6 +48,10 @@ public class MainActivity extends AppCompatActivity {
             if(!isValidEmail(binding.etCorreo.getText().toString())){
                 binding.etCorreo.setError("Correo invalido");
             }
+
+            MyDialog dialog = new MyDialog();
+            dialog.show(getSupportFragmentManager(), "MainActivity");
+
 
         });
     }
